@@ -46,6 +46,7 @@ Kani TTS offers multiple inference options optimized for different hardware:
 
 ### Basic Example (GPU/CPU)
 The basic inference example runs on both GPU and CPU, making it accessible for various hardware setups. Check the `examples/basic` in this repository for getting started.
+You can use the PyPi package `kani-tts`. [More detailes...](https://pypi.org/project/kani-tts/)
 
 ### vLLM (NVIDIA GPU)
 For high-performance inference on NVIDIA GPUs, use [KaniTTS-vLLM](https://github.com/nineninesix-ai/kanitts-vllm). This option is super fast and provides an OpenAI compatible API, making it easy to integrate with existing tools and workflows.
