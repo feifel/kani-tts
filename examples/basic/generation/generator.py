@@ -38,8 +38,13 @@ class TTSGenerator:
             MODEL_NAME,
             torch_dtype=torch.bfloat16,
             device_map="auto",
+            local_files_only=True,
+            trust_remote_code=True 
         )
-        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME,
+            local_files_only=True,
+            trust_remote_code=True 
+        )
 
         if torch.cuda.is_available():
             self.device = 'cuda'

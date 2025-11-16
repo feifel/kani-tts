@@ -30,3 +30,9 @@ ENV/
 *.log
 *.wav
 .venv
+
+# local files
+models
+models/
+cache/
+output/

@@ -71,7 +71,7 @@ echo ""
 python -c "import torch; print(f'PyTorch version: {torch.__version__}')"
 python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
 python -c "import torch; print(f'CUDA version: {torch.version.cuda}') if torch.cuda.is_available() else print('CUDA not available')"
-python -c "import vllm; print(f'vLLM version: {vllm.__version__}')"
+# python -c "import vllm; print(f'vLLM version: {vllm.__version__}')"
 python -c "import transformers; print(f'Transformers version: {transformers.__version__}')"
 python -c "import fastapi; print(f'FastAPI version: {fastapi.__version__}')"
 
