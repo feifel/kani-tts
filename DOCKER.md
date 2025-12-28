@@ -4,33 +4,41 @@ This fork is created to run a local finetuned model in a docker container.
 ## Precondictions
 Create your local finetuned model by using this project:  https://github.com/feifel/kani-tts-training-docker
 
-Put your local finetuned model in the `models` directory. And configure it in the config.py file. E.g.:
+Put your local finetuned model in a dedicated directory inside the `models` directory or download one of the exiting models (e.g. https://huggingface.co/nineninesix/kani-tts-400m-de/tree/main). 
+The `models` folder should look like this:
 ```bash
-MODEL_NAME = "/app/models/Linda-tts-v1-lora16"
-```
-The content of that folder should look like this:
-```bash
-chat_template.jinja
-config.json
-generation_config.json
-model.safetensors
-special_tokens_map.json
-tokenizer_config.json
-tokenizer.json
-```
-
-## Build the docker image
-```bash
-docker build -t kani-tts .
+models
+└── your_model_name/
+    ├── chat_template.jinja
+    ├── config.json
+    ├── generation_config.json
+    ├── model.safetensors
+    ├── special_tokens_map.json
+    ├── tokenizer_config.json
+    └── tokenizer.json
 ```
 
-## Run the docker container
+Configure the model in the config.py file. E.g.:
 ```bash
-docker run --gpus all -p 8000:8000 \
-    -v $(pwd)/models:/app/models \
-    -v $(pwd)/cache:/app/cache \
-    -v $(pwd)/output:/app/output \
-    kani-tts
+MODEL_NAME = "/app/models/your_model_name"
+```
+
+## Run with Docker Compose
+You can also use docker compose to run the project.
+
+Start the container (detached mode):
+```bash
+docker compose up -d
+```
+
+View logs:
+```bash
+docker compose logs -f
+```
+
+Stop the container:
+```bash
+docker compose down
 ```
 
 ## Test the TTS 
@@ -38,3 +46,9 @@ Open the following file in your browser:
 ```bash
 examples/basic/client.html
 ```
+
+In case you have a multi speeker model, you can select the speeker by prefixing the text with the speeker e.g.:
+~~~
+Linda: Mein Name ist Linda, ich bin ein Text To Speach Modell.
+Oliver: Mein Name ist Oliver, ich bin auch ein Text To Speach Modell.
+~~~
