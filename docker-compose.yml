@@ -7,6 +7,7 @@ services:
       - ./models:/app/models
       - ./cache:/app/cache
       - ./output:/app/output
+      - ./examples/basic/config.py:/app/examples/basic/config.py
     deploy:
       resources:
         reservations:

@@ -23,6 +23,8 @@ Configure the model in the config.py file. E.g.:
 MODEL_NAME = "/app/models/your_model_name"
 ```
 
+**Note:** Since the config.py is mounted as a volume, any changes made to it will be reflected immediately without rebuilding the Docker image. Just restart the container to apply the changes.
+
 ## Run with Docker Compose
 You can also use docker compose to run the project.
 
