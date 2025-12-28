@@ -51,6 +51,9 @@ examples/basic/client.html
 
 In case you have a multi speeker model, you can select the speeker by prefixing the text with the speeker e.g.:
 ~~~
-Linda: Mein Name ist Linda, ich bin ein Text To Speach Modell.
-Oliver: Mein Name ist Oliver, ich bin auch ein Text To Speach Modell.
+linda: Mein Name ist Linda, ich bin ein Text To Speach Modell.
+~~~
+
+~~~
+oliver: Mein Name ist Oliver, ich bin ein Text To Speach Modell.
 ~~~
